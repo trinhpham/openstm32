@@ -8,10 +8,12 @@ RUN apt-get update && \
     libgtk2.0-0 && \
     apt clean all
 
+RUN mkdir -p /workspace/configuration/
 ADD auto-install.xml ./
 ADD build.sh /
+ADD st_pref.ini /workspace/configuration/
 
-RUN wget http://www.ac6-tools.com/downloads/SW4STM32/install_sw4stm32_linux_64bits-latest.run && \
+RUN wget -q --show-progress --progress=bar:force:noscroll http://www.ac6-tools.com/downloads/SW4STM32/install_sw4stm32_linux_64bits-latest.run && \
     chmod a+x install_sw4stm32_linux_64bits-latest.run && \
     mkdir -p /usr/local/OpenStm32/ && \
     ./install_sw4stm32_linux_64bits-latest.run -f auto-install.xml
