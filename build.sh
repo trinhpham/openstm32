@@ -9,8 +9,8 @@ echo
 
 echo ============================
 echo Import project from src..
-/usr/local/OpenStm32/eclipse -nosplash -application org.eclipse.cdt.managedbuilder.core.headlessbuild -data /workspace -import /src
+/usr/local/OpenStm32/eclipse -nosplash -no-indexer -consoleLog -debug -application org.eclipse.cdt.managedbuilder.core.headlessbuild --launcher.suppressErrors -data /workspace -import /src
 echo
 echo ============================
 echo Start build...
-/usr/local/OpenStm32/eclipse -nosplash -application org.eclipse.cdt.managedbuilder.core.headlessbuild -data /workspace -cleanBuild all
+/usr/local/OpenStm32/eclipse -nosplash -no-indexer -consoleLog -debug -application org.eclipse.cdt.managedbuilder.core.headlessbuild --launcher.suppressErrors -data /workspace -build all
