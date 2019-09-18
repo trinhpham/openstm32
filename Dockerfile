@@ -1,7 +1,7 @@
 FROM trinhpham/docker-ubuntu-with-mirror:latest
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
+    apt-get install -qqy --no-install-recommends \
     build-essential \
     wget \
     make \
@@ -20,7 +20,8 @@ RUN wget -q --show-progress --progress=bar:force:noscroll http://www.ac6-tools.c
 
 RUN PLUGIN_PATH=`find /usr/local/OpenStm32/plugins -maxdepth 1 -type d -name 'fr.ac6.mcu.externaltools.arm-none.linux64*' -print -quit` && \
     MCU_PATH=`find ${PLUGIN_PATH}/tools -maxdepth 1 -type f -name 'st-gnu-arm-gcc*' -print -quit` && \
-    tar -jxvf $MCU_PATH -C ${PLUGIN_PATH}/tools
+    tar -jxvf $MCU_PATH -C ${PLUGIN_PATH}/tools && \
+    mv `find ${PLUGIN_PATH}/tools -maxdepth 1 -type d -name 'st-gnu-arm-gcc*' -print -quit` ${PLUGIN_PATH}/tools/compiler
 
 WORKDIR /workspace
 

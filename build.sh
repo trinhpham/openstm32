@@ -2,8 +2,8 @@
 
 echo ============================
 echo Starting up...
-export MCU_FOLDER=`find /usr/local/OpenStm32/plugins -maxdepth 3 -type d -name 'st-gnu-arm-gcc*' -print -quit`
-export PATH=$MCU_FOLDER/bin:$PATH
+export PLUGIN_PATH=`find /usr/local/OpenStm32/plugins -maxdepth 1 -type d -name 'fr.ac6.mcu.externaltools.arm-none.linux64*' -print -quit`
+export PATH=$PLUGIN_PATH/tools/compiler/bin:$PATH
 echo Current PATH: $PATH
 echo
 
