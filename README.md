@@ -10,8 +10,10 @@ docker run -it --rm -v /myProject:/src trinhpham/openstm32
 ```
 
 # TODO
-[] Multiple projects support
-[] Able to specify configuration to be built
+- [x] `Dockerfile` is adaptable to any versions of OpenSTM32 (not hard code)
+- [ ] Auto rebuild when new version of OpenSTM32 is released
+- [ ] Multiple projects support
+- [ ] Able to specify configuration to be built
 
 # Contribution
 PR are always welcome, guys :)
