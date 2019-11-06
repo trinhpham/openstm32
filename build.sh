@@ -13,4 +13,4 @@ echo Import project from src..
 echo
 echo ============================
 echo Start build...
-/usr/local/OpenStm32/eclipse -nosplash -no-indexer -consoleLog -debug -application org.eclipse.cdt.managedbuilder.core.headlessbuild --launcher.suppressErrors -data /workspace -build all
+/usr/local/OpenStm32/eclipse -nosplash -no-indexer -consoleLog -debug -application org.eclipse.cdt.managedbuilder.core.headlessbuild --launcher.suppressErrors -data /workspace -build all -printErrorMarkers
