@@ -25,7 +25,7 @@ ADD st_pref.ini /workspace/configuration/
 ADD build.sh /
 
 # Download the latest OpenStm32
-RUN wget -q --show-progress --progress=bar:force:noscroll http://www.ac6-tools.com/downloads/SW4STM32/install_sw4stm32_linux_64bits-latest.run && \
+RUN wget -q --show-progress --progress=bar:force:noscroll --no-check-certificate https://www.ac6-tools.com/downloads/SW4STM32/install_sw4stm32_linux_64bits-latest.run && \
     chmod a+x install_sw4stm32_linux_64bits-latest.run
 
 # Silently install OpenStm32 using previous auto installation script
